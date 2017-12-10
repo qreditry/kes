@@ -1,0 +1,84 @@
+.func
+  background-color: $darkgrey
+
+  &__header
+    color: $white
+    &::after
+      background-color: $white
+
+  &__h
+    color: $white
+    background-color: $darkgrey
+
+  &__items
+    +container-fluid
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+
+  &__item
+    position: relative
+    text-align: center
+    min-width: 256px
+    flex-basis: 33%
+    flex-grow: 1
+    padding-bottom: 20px
+
+  &__p
+    padding-bottom: 20px
+    width: 80%
+    margin: 0 auto
+    color: $greyb
+
+  &__link
+    float: right
+    margin-right: 30px
+    font-size: 14px
+    transition: 0.3s
+    text-decoration: underline
+
+    &:hover
+      color: $darkbrown
+
+  &__item:nth-child(2)
+    background-color: #363636
+
+  &__item:nth-child(3)
+    background-color: $lightdark
+
+  &__item:nth-child(4)
+    background-color: #888888
+
+  &__item:nth-child(5)
+    background-color: #a3a3a3
+
+  &__item:nth-child(6)
+    position: relative
+    background-color: $verylightgrey
+
+    &::after
+      content: ""
+      position: absolute
+      width: 80%
+      height: 2px
+      bottom: 0
+      left: 10%
+      background-color: $darkbrown
+
+
+
+    .func__link
+      display: none
+
+  &__item:nth-child(n+4)
+    .func__header
+      color: $black
+
+    .func__link
+      color: $black
+
+      &:hover
+        color: $darkbrown
+
+    .func__p
+      color: $lightdark

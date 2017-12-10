@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
+  <script src="{% static 'static/js/jquery.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'static/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'static/css/style.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="info">
+      <a href="/">
+        <picture>
+          <source media="(max-width: 767px)" srcset="{% static 'static/img/index/logo-m-1.png' %}">
+          <img class="info__logo" src="{% static 'static/img/index/logo-l-1.png' %}" alt="logo" width="250">
+        </picture></a>
+      <div class="info__radio">
+        <span class="info__span info__span--header">Lorem ipsum.</span>
+        <span class="info__tel">240-00-26</span>
+        <span class="info__span info__span--footer">Работаем с 9:00 до 19:00</span>
+      </div>
+      <div class="info__radio">
+        <span class="info__span info__span--header">Lorem ipsum dolor sit.</span>
+        <span class="info__tel">240-57-26</span>
+        <span class="info__span info__span--footer">Lorem ipsum dolor.</span>
+      </div>
+      <button class="info__btn btn" type="button" name="button">Оставить заявку</button>
+    </div>
+    <nav class="main-nav main-nav--closed">
+      <button type="button" class="main-nav__toggle">Открыть меню</button>
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__items">
+          <li class="main-nav__item main-nav__item--active"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h1 >{{ item.name }}</h1>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <address class="footer__item footer-adds">
+        <h3 class="footer-adds__h3">КазЭнергоСтрой</h3>
+        <span class="footer-adds__address">г. Казань, ул. М.Гафури, д. 50, пом. 2</span><br>
+        <div class="footer-adds__tels">
+          <p class="footer-adds__tel">240-00-26</p>
+          <p class="footer-adds__tel">240-57-26</p>
+        </div>
+      </address>
+      <section class="footer__item footer-social">
+        <h3 class="footer-social__h3 footer__h3">давайте дружить!</h3>
+        <div class="footer-social__wrapper">
+          <a href="" class="footer-social__link footer-social__link--vk"></a>
+          <a href="" class="footer-social__link footer-social__link--fb"></a>
+          <a href="" class="footer-social__link footer-social__link--inst"></a>
+        </div>
+      </section>
+      <section class="footer__item footer-develop">
+        <h3 class="footer-develop__created footer__h3">разработано:</h3>
+        <a href="" class="footer-develop__company">albert-studio-entertainment.com</a>
+      </section>
+    </div>
+  </footer>
+</body>
+</html>

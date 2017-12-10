@@ -1,0 +1,192 @@
+.info
+  +container-fluid
+  display: flex
+  padding: 15px 0
+  justify-content: space-around
+  align-items: center
+  background-color: $darkgrey
+
+  &__tel
+    display: block
+    width: 100%
+
+  &__btn
+    display: none
+
+.btn
+  display: block
+  width: 200px
+  height: 50px
+  background-color: $lightbrown
+  border: none
+  border-radius: 3px
+  color: $white
+  text-transform: uppercase
+
+  &:hover
+    transition: 0.3s
+    background-color: $darkbrown
+    
+.main-nav
+  position: relative
+  background-color: $lightbrown
+
+  &__items
+    +container-fluid
+    display: flex
+    flex-direction: column
+    text-align: center
+
+  &__item
+    position: relative
+
+  &__link
+    display: block
+    padding: 12px 0
+
+
+@media (max-width: 767px)
+  .info
+    padding: 10px
+    justify-content: center
+
+    &__radio,
+    &__btn
+      display: none
+
+
+  .main-nav
+    min-height: 50px
+
+    &__toggle
+      position: absolute
+      display: block
+      width: 60px
+      height: 50px
+      top: 0
+      right: 0
+      z-index: 2
+
+      font-size: 0
+      cursor: pointer
+      border: none
+      background-color: $darkbrown
+
+
+  .main-nav--closed .main-nav__item
+    display: none
+
+    &--active
+      display: block
+
+  .main-nav--closed .main-nav__toggle
+    &::before
+      position: absolute
+      content: ""
+      width: 35px
+      height: 3px
+      top: 13px
+      left: 12px
+      background-color: $white
+      box-shadow: 0 10px 0 0 $white, 0 20px 0 0 $white
+
+
+  .main-nav--opened .main-nav__wrapper
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    left: 60px
+    height: 70vh
+    min-height: 300px
+    z-index: 10
+    background-color: $lightbrown
+
+  .main-nav--opened .main-nav__toggle
+    left: 0
+
+    &::before,
+    &::after
+      position: absolute
+      content: ""
+      width: 40px
+      height: 3px
+      top: 23px
+      left: 10px
+      background-color: $white
+      box-shadow: none
+
+    &::before
+      transform: rotate(45deg)
+
+    &::after
+      transform: rotate(-45deg)
+
+  .main-nav--opened .main-nav__item::after
+    position: absolute
+    content: ""
+    display: block
+    width: 100%
+    height: 1px
+    bottom: 0
+    background-color: $darkbrown
+    z-index: 11
+
+@media (min-width: 768px)
+  .info
+    background-color: $bgc
+
+    &__logo
+      width: 300px
+
+    &__radio:nth-child(2)
+      display: none
+
+    &__span
+      text-transform: none
+      font-weight: 400
+      color: $lightdark
+
+      &--footer
+        color: $black
+
+    &__tel
+      color: $darkbrown
+
+
+
+  .main-nav
+    background-color: $darkgrey
+
+    &__toggle
+      display: none
+
+    &__items
+      flex-direction: row
+      justify-content: space-around
+
+    &__item
+      flex-grow: 1
+
+    &__item:not(:last-of-type)::after
+      position: absolute
+      content: ""
+      display: block
+      width: 1px
+      height: 80%
+      top: 10%
+      right: 0
+      background-color: $lightdark
+
+
+    &__link
+      padding: 20px 0
+
+      &:hover
+        transition: 0.3s
+        color: $lightbrown
+
+@media (min-width: 1200px)
+  .info
+    &__radio:nth-child(2)
+      display: block

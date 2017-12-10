@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
+  <script src="{% static 'static/js/jquery.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'static/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'static/css/style.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="info">
+      <a href="">
+        <picture>
+          <source media="(max-width: 767px)" srcset="{% static 'static/img/index/logo-m-1.png' %}">
+          <img class="info__logo" src="{% static 'static/img/index/logo-l-1.png' %}" alt="logo" width="250">
+        </picture></a>
+      <div class="info__radio">
+        <span class="info__span info__span--header">Lorem ipsum.</span>
+        <span class="info__tel">240-00-26</span>
+        <span class="info__span info__span--footer">Работаем с 9:00 до 19:00</span>
+      </div>
+      <div class="info__radio">
+        <span class="info__span info__span--header">Lorem ipsum dolor sit.</span>
+        <span class="info__tel">240-57-26</span>
+        <span class="info__span info__span--footer">Lorem ipsum dolor.</span>
+      </div>
+      <button class="info__btn btn" type="button" name="button">Оставить заявку</button>
+    </div>
+    <nav class="main-nav main-nav--opened">
+      <button type="button" class="main-nav__toggle">Открыть меню</button>
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__items">
+          <li class="main-nav__item main-nav__item--active"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="slider">
+      <div class="slider__wrapper">
+        <picture>
+          <source srcset="{% static 'static/img/index/slider/1.jpg' %}" media="(min-width: 1200px)">
+          <img class="slider__img slider__img--show" src="{% static 'static/img/index/slider/1200/1.jpg' %}" alt="slide-1">
+        </picture>
+        <picture>
+          <source srcset="{% static 'static/img/index/slider/2.jpg' %}" media="(min-width: 1200px)">
+          <img class="slider__img" src="{% static 'static/img/index/slider/1200/2.jpg' %}" alt="slide-2">
+        </picture>
+        <picture>
+          <source srcset="{% static 'static/img/index/slider/3.jpg' %}" media="(min-width: 1200px)">
+          <img class="slider__img" src="{% static 'static/img/index/slider/1200/3.jpg' %}" alt="slide-3">
+        </picture>
+        <picture>
+          <source srcset="{% static 'static/img/index/slider/4.jpg' %}" media="(min-width: 1200px)">
+          <img class="slider__img" src="{% static 'static/img/index/slider/1200/4.jpg' %}" alt="slide-4">
+        </picture>
+        <picture>
+          <source srcset="{% static 'static/img/index/slider/5.jpg' %}" media="(min-width: 1200px)">
+          <img class="slider__img" src="{% static 'static/img/index/slider/1200/5.jpg' %}" alt="slide-5">
+        </picture>
+      </div>
+      <span class="slider__control slider__control--prev">&#10094</span>
+      <span class="slider__control slider__control--next">&#10095</span>
+      <div class="slider__dots">
+        <span class="slider__dot slider__dot--active" onclick="goToSlide(0)"></span>
+        <span class="slider__dot" onclick="goToSlide(1)"></span>
+        <span class="slider__dot" onclick="goToSlide(2)"></span>
+        <span class="slider__dot" onclick="goToSlide(3)"></span>
+        <span class="slider__dot" onclick="goToSlide(4)"></span>
+      </div>
+  </div>
+  <div class="feature">
+      <div class="feature__wrapper">
+        <div class="feature-item">
+          <h3 class="feature-item__header">Lorem ipsum.</h3>
+          <div class="feature-item__img"></div><!-- FIXME:  -->
+          <!-- <img src="" alt="" class="feature-item__img"> -->
+          <p class="feature-item__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, inventore.</p>
+        </div>
+        <div class="feature-item">
+          <h3 class="feature-item__header">Lorem ipsum.</h3>
+          <div class="feature-item__img"></div><!-- FIXME:  -->
+          <!-- <img src="" alt="" class="feature-item__img"> -->
+          <p class="feature-item__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, possimus?</p>
+        </div>
+        <div class="feature-item">
+          <h3 class="feature-item__header">Lorem ipsum.</h3>
+          <div class="feature-item__img"></div><!-- FIXME:  -->
+          <!-- <img src="" alt="" class="feature-item__img"> -->
+          <p class="feature-item__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, accusantium.</p>
+        </div>
+      </div>
+    <span class="feature-item__control feature-item__control--prev">&#10094</span>
+    <span class="feature-item__control feature-item__control--next">&#10095</span>
+  </div>
+  <div class="main-info">
+    <div class="main-info__header text-header">
+      <h2 class="main-info__h text-h">О компании</h2>
+    </div>
+    <p class="main-info__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa officia blanditiis magni, quisquam, aut itaque rerum sunt quam praesentium odio dolore et iusto molestias dicta sapiente libero quis unde dolores.</p>
+  </div>
+  <div class="func">
+    <div class="func__header text-header">
+      <h2 class="func__h text-h">Lorem ipsum.</h2>
+    </div>
+    <div class="func__items">
+      <section class="func__item">
+        <h3 class="func__header">Lorem ipsum.</h3>
+        <p class="func__p">Lorem ipsum dolor sit amet.</p>
+        <a href="" class="func__link">подробнее</a>
+      </section>
+      <section class="func__item">
+        <h3 class="func__header">Lorem ipsum.</h3>
+        <p class="func__p">Lorem ipsum dolor sit amet.</p>
+        <a href="" class="func__link">подробнее</a>
+      </section>
+      <section class="func__item">
+        <h3 class="func__header">Lorem ipsum.</h3>
+        <p class="func__p">Lorem ipsum dolor sit amet.</p>
+        <a href="" class="func__link">подробнее</a>
+      </section>
+      <section class="func__item">
+        <h3 class="func__header">Lorem ipsum.</h3>
+        <p class="func__p">Lorem ipsum dolor sit amet.</p>
+        <a href="" class="func__link">подробнее</a>
+      </section>
+      <section class="func__item">
+        <h3 class="func__header">Lorem ipsum.</h3>
+        <p class="func__p">Lorem ipsum dolor sit amet.</p>
+        <a href="" class="func__link">подробнее</a>
+      </section>
+      <section class="func__item">
+        <h3 class="func__header">Lorem ipsum.</h3>
+        <p class="func__p">Lorem ipsum dolor sit amet.</p>
+        <a href="" class="func__link">подробнее</a>
+      </section>
+    </div>
+  </div>
+  <div class="review">
+    <div class="reviews">
+      <div class="reviews__wrapper">
+        <section class="reviews__item">
+          <span class="reviews__name">Lorem ipsum.</span>
+          <p class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, explicabo.</p>
+        </section>
+        <section class="reviews__item">
+          <span class="reviews__name">Lorem ipsum.</span>
+          <p class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, ex.</p>
+        </section>
+        <section class="reviews__item">
+          <span class="reviews__name">Lorem ipsum.</span>
+          <p class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, cupiditate?</p>
+        </section>
+        <section class="reviews__item">
+          <span class="reviews__name">Lorem ipsum.</span>
+          <p class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, maiores!</p>
+        </section>
+        <section class="reviews__item">
+          <span class="reviews__name">Lorem ipsum.</span>
+          <p class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, distinctio.</p>
+        </section>
+        <section class="reviews__item">
+          <span class="reviews__name">Lorem ipsum.</span>
+          <p class="reviews__review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, sapiente.</p>
+        </section>
+      </div>
+      <span class="reviews__control reviews__control--prev">&#10094</span>
+      <span class="reviews__control reviews__control--next">&#10095</span>
+    </div>
+  </div>
+  <div class="request">
+    <h2 class="request__h2">заинтересовались?</h2>
+    <button class="request__btn btn">оставить заявку</button>
+  </div>
+    <div class="news">
+      <div class="news__header text-header">
+        <h2 class="news__h text-h">Lorem ipsum<br>dolor sit.</h2>
+      </div>
+      <div class="news__wrapper">
+        <div class="news__item">
+          <div class="news__img"></div>
+          <p class="news__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eum.</p>
+        </div>
+        <div class="news__item">
+          <div class="news__img"></div>
+          <p class="news__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, dicta.</p>
+        </div>
+        <div class="news__item">
+          <div class="news__img"></div>
+          <p class="news__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, doloremque!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <address class="footer__item footer-adds">
+        <h3 class="footer-adds__h3">КазЭнергоСтрой</h3>
+        <span class="footer-adds__address">г. Казань, ул. М.Гафури, д. 50, пом. 2</span><br>
+        <div class="footer-adds__tels">
+          <p class="footer-adds__tel">240-00-26</p>
+          <p class="footer-adds__tel">240-57-26</p>
+        </div>
+      </address>
+      <section class="footer__item footer-social">
+        <h3 class="footer-social__h3 footer__h3">давайте дружить!</h3>
+        <div class="footer-social__wrapper">
+          <a href="" class="footer-social__link footer-social__link--vk"></a>
+          <a href="" class="footer-social__link footer-social__link--fb"></a>
+          <a href="" class="footer-social__link footer-social__link--inst"></a>
+        </div>
+      </section>
+      <section class="footer__item footer-develop">
+        <h3 class="footer-develop__created footer__h3">разработано:</h3>
+        <a href="" class="footer-develop__company">albert-studio-entertainment.com</a>
+      </section>
+    </div>
+  </footer>
+  <div class="popup-request popup-request--hidden">
+    <div class="popup-request__wrapper">
+      <button class="popup-request__close" type="button" title="закрыть"></button>
+      <h2 class="popup-request__h2">форма обратной связи</h2>
+      <p class="popup-request__thanks hidden">Спасибо, в ближайшее время мы с вами свяжемся</p>
+      <form class="popup-request__form" id="feedbackForm" method="post">
+        {% csrf_token %}
+        <label class="popup-request__label">
+          <span class="popup-request__item">Имя:</span>
+          <input class="popup-request__btn" id="feedbackName" type="text" name="name" required>
+        </label>
+        <label class="popup-request__label">
+          <span class="popup-request__item">телефон:</span>
+          <input class="popup-request__btn" type="tel" name="tel">
+        </label>
+        <label class="popup-request__label">
+          <span class="popup-request__item">почта:</span>
+          <input class="popup-request__btn" id="feedbackEmail" type="email" name="email" required>
+        </label>
+        <label class="popup-request__label">
+          <span class="popup-request__item">сообщение:</span>
+          <textarea rows="3" class="popup-request__btn popup-request__textarea" type="text" name="message"></textarea>
+        </label>
+        <input class="popup-request__submit btn" id="feedbackSubmit" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+      </form>
+    </div>
+  </div>
+  <script src="{% static 'static/js/main.js' %}"></script>
+  <script src="{% static 'static/js/ajax.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.search
+  position: relative
+  display: flex
+  +container-fluid
+
+  &__result
+    box-sizing: border-box
+    min-width: 220px
+    flex-grow: 1
+    padding: 5px 10px
+    height: 40px
+    border: 2px solid $lightdark
+
+  &__submit
+    min-width: 40px
+    background-color: $lightdark
+    background-image: url("../img/shop/search.png")
+
+  &__cart
+    position: relative
+    min-width: 60px
+    background-color: $darkgrey
+    background-image: url("../img/shop/cart.png")
+
+    &::after // start kostyl ebanniy
+      position: absolute
+      content: '1'
+      width: 16px
+      height: 16px
+      border-radius: 8px
+      bottom: 5px
+      right: 5px
+      background-color: red
+      color: $white
+      font-size: 14px // end kostyl
+
+  &__cart,
+  &__submit
+    height: 40px
+    border: none
+    background-repeat: no-repeat
+    background-position: center

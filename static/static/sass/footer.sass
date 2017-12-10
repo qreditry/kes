@@ -1,0 +1,109 @@
+.footer
+  margin-top: 30px
+  color: $white
+  background-color: $darkgrey
+  font-size: 16px
+
+  &__h3
+    font-size: 20px
+    line-height: 30px
+    margin-bottom: 30px
+
+  &__wrapper
+    +container-fluid
+    display: flex
+    justify-content: space-around
+
+  &-adds
+    font-style: normal
+
+    &__h3
+      font-size: 25px
+      text-transform: none
+
+    &__address
+      margin-bottom: 20px
+
+    &__tels
+      display: flex
+
+    &__tel
+      margin-right: 30px
+
+  &-social
+    &__wrapper
+      text-align: center
+    &__link
+      display: inline-block
+      width: 43px
+      height: 43px
+      margin-right: 10px
+      background-position: center
+      background-repeat: no-repeat
+      background-color: $lightdark
+      transition: 0.5s
+
+      &:hover
+        background-color: $verylightgrey
+
+      &--vk
+        background-image: url("../img/index/vk.png")
+        &:hover
+          background-image: url("../img/index/vk-w.png")
+
+      &--fb
+        background-image: url("../img/index/fb.png")
+        &:hover
+          background-image: url("../img/index/fb-w.png")
+
+      &--inst
+        background-image: url("../img/index/inst.png")
+        &:hover
+          background-image: url("../img/index/inst-w.png")
+
+  &-develop
+    &__created
+      margin-bottom: 40px
+    &__company
+      padding: 11px
+      background-color: $lightdark
+      transition: 0.5s
+      &:hover
+        background-color: $verylightgrey
+        color: $black
+
+@media (max-width: 1199px)
+  .footer
+
+    &__wrapper
+      justify-content: space-around
+      flex-wrap: wrap
+
+    &__item
+      width: 40%
+      text-align: center
+
+    &-social
+      order: 3
+      margin-bottom: 20px
+
+    &-adds
+      &__tels
+        justify-content: center
+
+
+@media (max-width: 767px)
+  .footer
+    &__wrapper
+      flex-direction: column
+
+    &__item
+      width: 100%
+      margin-bottom: 30px
+
+    &__h3
+      margin-bottom: 10px
+
+    &-adds
+      &__tel
+        margin-bottom: 0

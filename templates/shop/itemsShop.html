@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <meta name="format-detection" content="telephone=no">
+  <script src="{% static 'static/js/jquery.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'static/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'static/css/style.css' %}">
+</head>
+<body>
+  <header class="header">
+    <div class="info">
+      <a href="/">
+        <picture>
+          <source media="(max-width: 767px)" srcset="{% static 'static/img/index/logo-m-1.png' %}">
+          <img class="info__logo" src="{% static 'static/img/index/logo-l-1.png' %}" alt="logo" width="250">
+        </picture></a>
+      <div class="info__radio">
+        <span class="info__span info__span--header">Lorem ipsum.</span>
+        <span class="info__tel">240-00-26</span>
+        <span class="info__span info__span--footer">Работаем с 9:00 до 19:00</span>
+      </div>
+      <div class="info__radio">
+        <span class="info__span info__span--header">Lorem ipsum dolor sit.</span>
+        <span class="info__tel">240-57-26</span>
+        <span class="info__span info__span--footer">Lorem ipsum dolor.</span>
+      </div>
+      <button class="info__btn btn" type="button" name="button">Оставить заявку</button>
+    </div>
+    <nav class="main-nav main-nav--closed">
+      <button type="button" class="main-nav__toggle">Открыть меню</button>
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__items">
+          <li class="main-nav__item main-nav__item--active"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">lorem</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <form action="" method="get" class="search" id="search">
+      <input type="search" class="search__result" name="search" placeholder="поиск">
+      <button type="submit" class="search__submit"></button>
+      <button class="search__cart"></button>
+    </form>
+    <form action="" method="get" class="filter" id="filter">
+      <div class="filter__header">
+        <h2 class="filter__h2">фильтры</h2>
+        <img class="filter__arrow" src="{% static 'static/img/shop/arrow.png' %}" width="30" height="32" alt="arrow">
+      </div>
+      <fieldset class="filter__fieldset hidden">
+        <p class="filter__legend">производитель:</p>
+        <div class="filter__wrapper">
+          <label class="filter__item">
+            <input type="checkbox" class="filter__checkbox" name="manufacturer" value="Harvia">
+            <i class="filter__checkbox--check"></i>
+            <span class="filter__span">harvia</span>
+          </label>
+          <label class="filter__item">
+            <input type="checkbox" class="filter__checkbox" name="manufacturer" value="Tylo">
+            <i class="filter__checkbox--check"></i>
+            <span class="filter__span">tylo</span>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="filter__fieldset hidden">
+        <p class="filter__legend">тип печи:</p>
+        <div class="filter__wrapper">
+          <label class="filter__item filter__item--type">
+            <input type="checkbox" class="filter__checkbox" name="type" value="Electrical">
+            <i class="filter__checkbox--check"></i>
+            <span class="filter__span">электрическая</span>
+          </label>
+          <label class="filter__item filter__item--type">
+            <input type="checkbox" class="filter__checkbox" name="type" value="Wood">
+            <i class="filter__checkbox--check"></i>
+            <span class="filter__span">дровяная</span>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="filter__fieldset hidden">
+        <p class="filter__legend">цена (руб.):</p>
+        <div class="filter__wrapper">
+          <label class="filter__item filter__item--number">
+            <span class="filter__span">от:</span><input type="number" class="filter__number" name="minPrice" min="0">
+          </label>
+          <label class="filter__item filter__item--number">
+            <span class="filter__span">до:</span><input type="number" class="filter__number" name="maxPrice" min="0">
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="filter__fieldset hidden">
+        <p class="filter__legend">мощность (кв.):</p>
+        <div class="filter__wrapper">
+          <label class="filter__item filter__item--number">
+            <span class="filter__span">от:</span><input type="number" class="filter__number" name="minPower" min="0">
+          </label>
+          <label class="filter__item filter__item--number">
+            <span class="filter__span">до:</span><input type="number" class="filter__number" name="maxPower" min="0">
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="filter__fieldset hidden">
+        <p class="filter__legend">объем парильни (м<sup>3</sup>):</p>
+        <div class="filter__wrapper filter__wrapper--amount">
+          <label class="filter__item filter__item--number">
+            <input type="number" class="filter__number filter__number--amount" name="amount" min="0">
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="filter__fieldset filter__fieldset--submit hidden">
+        <button type="submit" class="filter__submit btn">Показать</button>
+      </fieldset>
+    </form>
+    <div class="result-container">
+
+    </div>
+
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <address class="footer__item footer-adds">
+        <h3 class="footer-adds__h3">КазЭнергоСтрой</h3>
+        <span class="footer-adds__address">г. Казань, ул. М.Гафури, д. 50, пом. 2</span><br>
+        <div class="footer-adds__tels">
+          <p class="footer-adds__tel">240-00-26</p>
+          <p class="footer-adds__tel">240-57-26</p>
+        </div>
+      </address>
+      <section class="footer__item footer-social">
+        <h3 class="footer-social__h3 footer__h3">давайте дружить!</h3>
+        <div class="footer-social__wrapper">
+          <a href="" class="footer-social__link footer-social__link--vk"></a>
+          <a href="" class="footer-social__link footer-social__link--fb"></a>
+          <a href="" class="footer-social__link footer-social__link--inst"></a>
+        </div>
+      </section>
+      <section class="footer__item footer-develop">
+        <h3 class="footer-develop__created footer__h3">разработано:</h3>
+        <a href="" class="footer-develop__company">albert-studio-entertainment.com</a>
+      </section>
+    </div>
+  </footer>
+  <script src="{% static 'static/js/shop/itemsShop.js' %}"></script>
+</body>
+</html>
